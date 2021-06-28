@@ -221,12 +221,12 @@ loop:
 /* Set the offload flags to be like a typical ethernet device */
 static void set_device_offload_flags(struct local_netdev *netdev)
 {
-#ifdef linux
-	const u32 offload =
-	    TUN_F_CSUM | TUN_F_TSO4 | TUN_F_TSO6 | TUN_F_TSO_ECN;
-	if (ioctl(netdev->tun_fd, TUNSETOFFLOAD, offload) != 0)
-		die_perror("TUNSETOFFLOAD");
-#endif
+// #ifdef linux
+// 	const u32 offload =
+// 	    TUN_F_CSUM | TUN_F_TSO4 | TUN_F_TSO6 | TUN_F_TSO_ECN;
+// 	if (ioctl(netdev->tun_fd, TUNSETOFFLOAD, offload) != 0)
+// 		die_perror("TUNSETOFFLOAD");
+// #endif
 }
 
 /* Bring up the device */
